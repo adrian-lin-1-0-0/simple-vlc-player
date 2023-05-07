@@ -27,14 +27,14 @@ func help() {
   `)
 }
 
-func ShowAppInfo(player *vlc.Player, showHelp *bool) {
+func ShowAppInfo(mediaPlayer *MediaPlayer, showHelp *bool) {
 	clearScreen()
 	if *showHelp {
 		help()
 	}
-	showVolumeBar(player)
+	showVolumeBar(mediaPlayer.Player)
 	fmt.Print(" ")
-	showMediaTime(player)
+	showMediaTime(mediaPlayer.Player)
 }
 
 var volumeBars = []string{" ", "▁", "▂", "▃", "▄", "▅", "▆", "▇", "█", "█", "█"}
