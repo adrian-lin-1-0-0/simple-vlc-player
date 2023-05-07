@@ -1,4 +1,4 @@
-package main
+package utils
 
 import (
 	"fmt"
@@ -26,7 +26,7 @@ func showHelp() {
   `)
 }
 
-func showAppInfo(player *vlc.Player) {
+func ShowAppInfo(player *vlc.Player) {
 	clearScreen()
 	showHelp()
 	showVolumeBar(player)

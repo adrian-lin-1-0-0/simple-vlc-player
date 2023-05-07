@@ -1,4 +1,4 @@
-package main
+package utils
 
 import (
 	"github.com/adrian-lin-1-0-0/simple-vlc-player/vlc"
@@ -16,11 +16,11 @@ func setVolume(player *vlc.Player, volume int) {
 	player.SetVolume(volume)
 }
 
-func volumeUp10(player *vlc.Player) {
+func VolumeUp10(player *vlc.Player) {
 	setVolume(player, player.GetVolume()+10)
 }
 
-func volumeDown10(player *vlc.Player) {
+func VolumeDown10(player *vlc.Player) {
 	setVolume(player, player.GetVolume()-10)
 }
 
@@ -40,10 +40,10 @@ func setMediaTime(player *vlc.Player, milliseconds int) {
 	player.SetMediaTime(milliseconds)
 }
 
-func forward10Second(player *vlc.Player) {
+func Forward10Second(player *vlc.Player) {
 	setMediaTime(player, player.GetMediaTime()+10*1000)
 }
 
-func backward10Second(player *vlc.Player) {
+func Backward10Second(player *vlc.Player) {
 	setMediaTime(player, player.GetMediaTime()-10*1000)
 }

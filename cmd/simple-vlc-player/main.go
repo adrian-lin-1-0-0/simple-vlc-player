@@ -6,6 +6,7 @@ import (
 	"os"
 	"time"
 
+	"github.com/adrian-lin-1-0-0/simple-vlc-player/utils"
 	"github.com/adrian-lin-1-0-0/simple-vlc-player/vlc"
 	"github.com/eiannone/keyboard"
 )
@@ -58,30 +59,30 @@ func main() {
 	go func() {
 		for {
 			time.Sleep(1 * time.Second)
-			showAppInfo(player)
+			utils.ShowAppInfo(player)
 		}
 	}()
 
 	for {
-		showAppInfo(player)
+		utils.ShowAppInfo(player)
 		char, key, err := keyboard.GetKey()
 		if err != nil {
 			panic(err)
 		}
 		if key == keyboard.KeyArrowUp {
-			volumeUp10(player)
+			utils.VolumeUp10(player)
 		}
 
 		if key == keyboard.KeyArrowDown {
-			volumeDown10(player)
+			utils.VolumeDown10(player)
 		}
 
 		if key == keyboard.KeyArrowRight {
-			forward10Second(player)
+			utils.Forward10Second(player)
 		}
 
 		if key == keyboard.KeyArrowLeft {
-			backward10Second(player)
+			utils.Backward10Second(player)
 		}
 
 		if char == 'q' {
