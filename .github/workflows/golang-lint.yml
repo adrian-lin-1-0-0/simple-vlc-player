@@ -16,6 +16,8 @@ jobs:
     name: lint
     runs-on: ubuntu-latest
     steps:
+      - name: Install vlc
+        run: sudo apt-get install vlc -y && sudo apt-get install libvlc-dev -y 
       - uses: actions/setup-go@v4
         with:
           go-version: '1.19'
