@@ -32,7 +32,6 @@ func showAppInfo(player *vlc.Player) {
 	showVolumeBar(player)
 	fmt.Print(" ")
 	showMediaTime(player)
-
 }
 
 var volumeBars = []string{" ", "▁", "▂", "▃", "▄", "▅", "▆", "▇", "█", "█", "█"}
@@ -46,6 +45,10 @@ func showVolumeBar(player *vlc.Player) {
 }
 
 func buildProgressBar(current, total int) string {
+	if total == 0 {
+		return "cant get media length\n"
+	}
+
 	const width = 40
 	completed := int(float64(current) / float64(total) * width)
 	bar := strings.Repeat("█", completed) + strings.Repeat("░", width-completed)
