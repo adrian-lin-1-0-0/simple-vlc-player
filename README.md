@@ -5,6 +5,9 @@ A simple VLC player for Linux written in go.
 
 ![](./doc/img/in-terminal.png)
 
+press `h` to show or hide help message.
+
+![](./doc/img/in-terminal-hidden.png)
 
 ## Quick Start
 
