@@ -2,13 +2,28 @@
 
 A simple VLC player for Linux written in go.
 
-## Quick Start
-
-```bash
-go run ./*.go -f <path-to-file>
-```
 
 ![](./doc/img/in-terminal.png)
+
+
+## Quick Start
+
+### Go Install
+
+```bash
+go install -v github.com/adrian-lin-1-0-0/simple-vlc-player/cmd/simple-vlc-player@latest
+```
+And then run it.
+
+```bash
+simple-vlc-player -f <path-to-file>
+```
+
+### Source Code
+
+```bash
+go run cmd/simple-vlc-player/main.go -f <path-to-file>
+```
 
 ## Install VLC On Debian/Ubuntu
 
