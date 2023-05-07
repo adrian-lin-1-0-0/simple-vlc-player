@@ -15,20 +15,23 @@ func clearScreen() {
 	cmd.Run()
 }
 
-func showHelp() {
+func help() {
 	fmt.Println(`
    [↑] : to increase volume
    [↓] : to decrease volume
    [→] : to forward 10 seconds
    [←] : to backward 10 seconds
+   [h] : to show/hide help
    [q] : to exit
-
+   
   `)
 }
 
-func ShowAppInfo(player *vlc.Player) {
+func ShowAppInfo(player *vlc.Player, showHelp *bool) {
 	clearScreen()
-	showHelp()
+	if *showHelp {
+		help()
+	}
 	showVolumeBar(player)
 	fmt.Print(" ")
 	showMediaTime(player)

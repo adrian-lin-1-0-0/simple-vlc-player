@@ -56,15 +56,17 @@ func main() {
 	//wait for vlc to play the media and ready to prepare buffer
 	time.Sleep(1 * time.Second)
 
+	showHelp := true
+
 	go func() {
 		for {
 			time.Sleep(1 * time.Second)
-			utils.ShowAppInfo(player)
+			utils.ShowAppInfo(player, &showHelp)
 		}
 	}()
 
 	for {
-		utils.ShowAppInfo(player)
+		utils.ShowAppInfo(player, &showHelp)
 		char, key, err := keyboard.GetKey()
 		if err != nil {
 			panic(err)
@@ -83,6 +85,10 @@ func main() {
 
 		if key == keyboard.KeyArrowLeft {
 			utils.Backward10Second(player)
+		}
+
+		if char == 'h' {
+			showHelp = !showHelp
 		}
 
 		if char == 'q' {
