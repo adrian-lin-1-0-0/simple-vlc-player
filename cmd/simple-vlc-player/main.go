@@ -49,28 +49,23 @@ func main() {
 		if err != nil {
 			panic(err)
 		}
-		if key == keyboard.KeyArrowUp {
+
+		switch key {
+		case keyboard.KeyArrowUp:
 			mediaPlayer.VolumeUp10()
-		}
-
-		if key == keyboard.KeyArrowDown {
+		case keyboard.KeyArrowDown:
 			mediaPlayer.VolumeDown10()
-		}
-
-		if key == keyboard.KeyArrowRight {
+		case keyboard.KeyArrowRight:
 			mediaPlayer.Forward10Second()
-		}
-
-		if key == keyboard.KeyArrowLeft {
+		case keyboard.KeyArrowLeft:
 			mediaPlayer.Backward10Second()
-		}
-
-		if char == 'h' {
-			showHelp = !showHelp
-		}
-
-		if char == 'q' {
-			break
+		case 0:
+			switch char {
+			case 'h':
+				showHelp = !showHelp
+			case 'q':
+				return
+			}
 		}
 	}
 }
