@@ -2,6 +2,7 @@ package utils
 
 import (
 	"fmt"
+	"log"
 	"os"
 	"os/exec"
 	"strings"
@@ -12,7 +13,10 @@ import (
 func clearScreen() {
 	cmd := exec.Command("clear") //Linux
 	cmd.Stdout = os.Stdout
-	cmd.Run()
+
+	if err := cmd.Run(); err != nil {
+		log.Println(err)
+	}
 }
 
 func help() {
